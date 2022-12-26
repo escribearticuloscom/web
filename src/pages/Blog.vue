@@ -1,7 +1,7 @@
 <template>
-  <q-page class="row q-mt-xl">
+  <q-page class="row">
     <div class="col-3" />
-    <div id="text-area" class="col-6">Blog</div>
+    <div id="text-area" class="col-6 q-mt-xl">Blog</div>
     <div class="col-3" />
   </q-page>
 </template>
