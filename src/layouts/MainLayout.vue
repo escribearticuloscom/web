@@ -1,6 +1,6 @@
 <template>
   <q-layout view="lHh Lpr lFf">
-    <q-header elevated class="bg-white q-mt-sm q-mb-md">
+    <q-header elevated class="bg-white q-pt-sm q-mb-md">
       <q-toolbar class="row justify-center">
         <q-btn
           v-for="btn in headerButtons"
@@ -41,3 +41,23 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.page-title {
+  font-size: 36px;
+  letter-spacing: 4px;
+  font-weight: 400;
+  margin-bottom: 24px;
+}
+
+.page-subtitle {
+  font-size: 22px;
+  letter-spacing: 2px;
+  font-weight: 400;
+  margin-bottom: 16px;
+}
+
+.content {
+  font-size: 18px;
+}
+</style>
