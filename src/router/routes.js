@@ -24,6 +24,11 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("src/pages/Contact.vue") }],
   },
+  {
+    path: "/blogs/:id",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [{ path: "", component: () => import("src/pages/Blogs.vue") }],
+  },
   // Always leave this as last one,
   // but you can also remove it
   {
