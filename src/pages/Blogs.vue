@@ -2,6 +2,7 @@
   <q-page class="row">
     <div class="col-3" />
     <div id="text-area" class="col-6 q-mt-xl">
+      <div class="page-title">{{ title }}</div>
       <div v-html="html"></div>
     </div>
     <div class="col-3" />

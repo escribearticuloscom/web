@@ -46,7 +46,7 @@
           <q-card-actions class="col-12 justify-center">
             <q-btn
               label="contactanos"
-              color="purple"
+              color="primary"
               @click="() => $router.push('contact')"
             />
           </q-card-actions>
