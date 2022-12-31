@@ -2,12 +2,15 @@
   <q-page>
     <div class="row full-height">
       <div class="col-1"></div>
-      <div class="col-4">
+      <div
+        class="col-md-4 col-xs-12"
+        :class="{ 'text-center': $q.screen.lt.md }"
+      >
         <div class="landing-tile">
           Mejora el SEO de tu sitio web con nuestros artículos de calidad
         </div>
         <div class="row">
-          <div class="col-8 landing-subtitle">
+          <div class="col-md-8 col-xs-12 landing-subtitle">
             Aumenta el tráfico y la visibilidad de tu sitio gracias a nuestros
             contenidos optimizados para los motores de búsqueda
           </div>
@@ -24,31 +27,39 @@
         </q-btn>
         <div class="landing-benefits-tile">Características</div>
       </div>
-      <div class="col-7 landing-background"></div>
-      <div class="col-12 row">
-        <div class="col-4 benefit-card">
-          <div class="dot" />
+      <div v-if="$q.screen.gt.sm" class="col-7 landing-background"></div>
+      <div class="col-12 row" :class="{ 'text-center': $q.screen.lt.md }">
+        <div class="col-md-4 col-xs-12 benefit-card">
+          <div :class="{ dot: $q.screen.gt.sm }" />
           <q-icon name="edit_document" size="128px" color="secondary" />
           <div class="benefit-title">Optimización SEO</div>
-          <div class="benefit-text">
-            Redacción de artículos de calidad y optimizados para el SEO
+          <div :class="{ 'q-pr-lg': $q.screen.lt.md }">
+            Nuestros artículos están diseñados para mejorar el posicionamiento
+            de tu sitio web en los motores de búsqueda. Utilizamos técnicas de
+            optimización SEO para asegurarnos de que tu contenido sea encontrado
+            por tus clientes potenciales.
           </div>
         </div>
-        <div class="col-4 benefit-card">
-          <div class="dot" />
+        <div class="col-md-4 col-xs-12 benefit-card">
+          <div :class="{ dot: $q.screen.gt.sm }" />
           <q-icon name="saved_search" size="128px" color="secondary" />
           <div class="benefit-title">Palabras clave</div>
-          <div class="benefit-text">
-            Investigación de palabras clave para asegurar una adecuada
-            optimización del contenido
+          <div :class="{ 'q-pr-lg': $q.screen.lt.md }">
+            Nuestro equipo de redactores especializados en SEO crea contenido de
+            alta calidad que atrae a tu audiencia y te ayuda a alcanzar tus
+            objetivos de negocio. Todos nuestros artículos pasan por un proceso
+            de revisión y edición para garantizar su calidad.
           </div>
         </div>
-        <div class="col-4 benefit-card">
-          <div class="dot" />
+        <div class="col-md-4 col-xs-12 benefit-card">
+          <div :class="{ dot: $q.screen.gt.sm }" />
           <q-icon name="timer" size="128px" color="secondary" />
           <div class="benefit-title">Entrega rápida</div>
-          <div class="benefit-text">
-            Entrega de artículos en el plazo acordado
+          <div :class="{ 'q-pr-lg': $q.screen.lt.md }">
+            Trabajamos con rapidez y eficiencia para asegurarnos de que recibas
+            tu contenido de forma oportuna. Ofrecemos un servicio personalizado
+            para adaptarnos a tus necesidades específicas y brindar una solución
+            a medida para tu empresa.
           </div>
         </div>
       </div>
@@ -88,7 +99,7 @@ export default defineComponent({
 .landing-background {
   text-align: right;
   background-position: right;
-  background-size: 600px;
+  background-size: 550px;
   background-repeat: no-repeat;
   background-image: url("../../public/imgs/fondo_home.png");
   margin-top: -20vh;
@@ -110,8 +121,8 @@ export default defineComponent({
 
 .benefit-card:hover .dot {
   border-radius: 10px;
-  width: 27vw;
-  height: 50vh;
+  width: 90%;
+  height: 110%;
   left: 4vw;
 }
 

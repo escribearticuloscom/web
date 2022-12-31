@@ -2,19 +2,34 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-white q-pt-sm q-mb-md">
       <q-toolbar class="row justify-between">
-        <div class="col-3">
-          <div class="q-ml-lg q-my-sm">
-            <q-img
-              src="imgs/logo_largo.png"
-              style="width: 200px; height: 50px"
-            />
+        <div class="col-xs-12 col-md-2">
+          <div
+            class="q-my-sm row items-center"
+            :class="{ 'q-ml-lg': $q.screen.gt.sm }"
+          >
+            <div class="col-1 text-left" v-if="$q.screen.lt.md">
+              <q-btn
+                flat
+                @click="() => (leftMenuOpen = !leftMenuOpen)"
+                round
+                dense
+                color="black"
+                icon="menu"
+              />
+            </div>
+            <div class="col-11 text-center">
+              <q-img
+                src="imgs/logo_largo.png"
+                style="width: 200px; height: 50px"
+              />
+            </div>
           </div>
         </div>
-        <div class="col-7 row justify-end">
+        <div v-if="$q.screen.gt.sm" class="col-8 row justify-end">
           <q-btn
             v-for="btn in headerButtons"
             :key="btn.label"
-            class="text-black q-mx-lg"
+            class="text-black q-px-lg"
             flat
             :label="btn.label"
             @click="goTo(btn.path)"
@@ -22,7 +37,23 @@
         </div>
       </q-toolbar>
     </q-header>
-
+    <q-drawer v-model="leftMenuOpen" :width="200" bordered class="bg-grey-3">
+      <div class="q-my-xl text-center">
+        <q-img src="imgs/logo_corto.png" style="width: 50px; height: 50px" />
+      </div>
+      <q-list>
+        <template v-for="btn in headerButtons" :key="btn.label">
+          <q-item clickable v-ripple @click="goTo(btn.path)">
+            <q-item-section avatar>
+              <q-icon :name="btn.icon" />
+            </q-item-section>
+            <q-item-section>
+              {{ btn.label }}
+            </q-item-section>
+          </q-item>
+        </template>
+      </q-list>
+    </q-drawer>
     <q-page-container>
       <router-view />
     </q-page-container>
@@ -50,15 +81,13 @@
           <h3>Contacto</h3>
           <p>Puedes contactarnos a través de las siguientes vías:</p>
           <ul>
-            <li>
-              <q-icon name="email" class="q-mr-sm" />
-              contacto@escribearticulos.com
-            </li>
+            <li><a href="#/contact">Contacto</a></li>
           </ul>
         </div>
       </div>
       <div class="copyright">
-        Copyright &copy; 2023 Ejemplo. Todos los derechos reservados.
+        Copyright &copy; 2023 escribearticulos.com. Todos los derechos
+        reservados.
       </div>
     </footer>
   </q-layout>
@@ -68,15 +97,16 @@
 import { defineComponent } from "vue";
 
 export default defineComponent({
-  setup() {
+  data() {
     return {
       headerButtons: [
-        { label: "Inicio", path: "home" },
-        { label: "Nuestro Blog", path: "blog" },
-        { label: "Sobre Nosotros", path: "aboutUs" },
-        { label: "Tarifas", path: "prices" },
-        { label: "Contacto", path: "contact" },
+        { label: "Inicio", path: "home", icon: "home" },
+        { label: "Nuestro Blog", path: "blog", icon: "article" },
+        { label: "Sobre Nosotros", path: "aboutUs", icon: "person" },
+        { label: "Tarifas", path: "prices", icon: "sell" },
+        { label: "Contacto", path: "contact", icon: "mail" },
       ],
+      leftMenuOpen: false,
     };
   },
   methods: {

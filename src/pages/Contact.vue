@@ -1,9 +1,13 @@
 <template>
   <q-page class="row">
     <div class="col-3" />
-    <div id="text-area" class="col-6 q-mt-xl">
+    <div
+      id="text-area"
+      class="col-md-6 col-xs-12 q-mt-xl"
+      :class="{ 'q-px-lg': $q.screen.lt.md }"
+    >
       <div class="page-title">Contacto</div>
-      <div class="row">
+      <div class="row q-mb-lg">
         <div class="col-md-6 col-xs-12">
           <div class="page-subtitle">Disponibilidad</div>
           <div class="row">

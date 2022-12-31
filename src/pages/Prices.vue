@@ -1,13 +1,17 @@
 <template>
   <q-page class="row">
-    <div class="col-md-2 col-xs-12" />
+    <div class="col-2" />
     <div id="text-area" class="col-md-8 col-xs-12 row justify-between q-mt-xl">
+      <div class="page-title col-12" :class="{ 'q-px-lg': $q.screen.lt.md }">
+        Tarifas
+      </div>
+
       <div
         v-for="plan in plans"
         :key="plan.title"
         class="col-md-4 col-xs-12 q-px-sm"
       >
-        <q-card class="row q-mt-md">
+        <q-card class="row q-mb-lg">
           <q-card-action class="card-header col-12">
             {{ plan.title }}
             <q-separator inset class="q-my-md" />
@@ -53,7 +57,7 @@
         </q-card>
       </div>
     </div>
-    <div class="col-md-2 col-xs-12" />
+    <div class="col-2" />
   </q-page>
 </template>
 

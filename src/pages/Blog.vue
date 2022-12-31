@@ -1,7 +1,11 @@
 <template>
   <q-page class="row">
     <div class="col-3" />
-    <div id="text-area" class="col-6 q-mt-xl">
+    <div
+      id="text-area"
+      class="col-md-6 col-xs-12 q-mt-xl"
+      :class="{ 'q-pl-lg': $q.screen.lt.md }"
+    >
       <div class="page-title">Nuestros blogs</div>
       <div v-for="blog in blogs" :key="blog.id">
         <q-item
