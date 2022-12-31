@@ -55,8 +55,5 @@ import { defineComponent } from "vue";
 
 export default defineComponent({
   name: "IndexPage",
-  created() {
-    console.log(this.$q);
-  },
 });
 </script>

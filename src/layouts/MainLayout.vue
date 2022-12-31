@@ -25,13 +25,15 @@
             </div>
           </div>
         </div>
+
         <div v-if="$q.screen.gt.sm" class="col-8 row justify-end">
           <q-btn
             v-for="btn in headerButtons"
             :key="btn.label"
-            class="text-black q-px-lg"
+            class="q-px-lg"
             flat
             :label="btn.label"
+            :class="isActive(btn.path) ? 'text-primary' : 'text-black'"
             @click="goTo(btn.path)"
           />
         </div>
@@ -43,7 +45,12 @@
       </div>
       <q-list>
         <template v-for="btn in headerButtons" :key="btn.label">
-          <q-item clickable v-ripple @click="goTo(btn.path)">
+          <q-item
+            clickable
+            v-ripple
+            :active="isActive(btn.path)"
+            @click="goTo(btn.path)"
+          >
             <q-item-section avatar>
               <q-icon :name="btn.icon" />
             </q-item-section>
@@ -112,6 +119,9 @@ export default defineComponent({
   methods: {
     goTo(path) {
       this.$router.push("/" + path);
+    },
+    isActive(path) {
+      return this.$router.currentRoute.value.path.includes(path);
     },
   },
 });

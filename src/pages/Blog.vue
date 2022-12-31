@@ -53,7 +53,6 @@ export default defineComponent({
       .keys()
       .map((x) => x.split("./")[1]);
     for (let page of pages) {
-      console.log("GET", page);
       await import(`../assets/json/${page}`).then((blog) => {
         this.blogs.push({
           title: blog.title,

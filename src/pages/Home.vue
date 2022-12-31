@@ -33,7 +33,7 @@
           <div :class="{ dot: $q.screen.gt.sm }" />
           <q-icon name="edit_document" size="128px" color="secondary" />
           <div class="benefit-title">Optimización SEO</div>
-          <div :class="{ 'q-pr-lg': $q.screen.lt.md }">
+          <div class="q-pr-lg">
             Nuestros artículos están diseñados para mejorar el posicionamiento
             de tu sitio web en los motores de búsqueda. Utilizamos técnicas de
             optimización SEO para asegurarnos de que tu contenido sea encontrado
@@ -44,7 +44,7 @@
           <div :class="{ dot: $q.screen.gt.sm }" />
           <q-icon name="saved_search" size="128px" color="secondary" />
           <div class="benefit-title">Palabras clave</div>
-          <div :class="{ 'q-pr-lg': $q.screen.lt.md }">
+          <div class="q-pr-lg">
             Nuestro equipo de redactores especializados en SEO crea contenido de
             alta calidad que atrae a tu audiencia y te ayuda a alcanzar tus
             objetivos de negocio. Todos nuestros artículos pasan por un proceso
@@ -55,7 +55,7 @@
           <div :class="{ dot: $q.screen.gt.sm }" />
           <q-icon name="timer" size="128px" color="secondary" />
           <div class="benefit-title">Entrega rápida</div>
-          <div :class="{ 'q-pr-lg': $q.screen.lt.md }">
+          <div class="q-pr-lg">
             Trabajamos con rapidez y eficiencia para asegurarnos de que recibas
             tu contenido de forma oportuna. Ofrecemos un servicio personalizado
             para adaptarnos a tus necesidades específicas y brindar una solución
@@ -121,7 +121,7 @@ export default defineComponent({
 
 .benefit-card:hover .dot {
   border-radius: 10px;
-  width: 90%;
+  width: 85%;
   height: 110%;
   left: 4vw;
 }
