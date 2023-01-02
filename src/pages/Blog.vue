@@ -1,9 +1,9 @@
 <template>
   <q-page class="row">
-    <div class="col-3" />
+    <div class="col-2" />
     <div
       id="text-area"
-      class="col-md-6 col-xs-12 q-mt-xl"
+      class="col-md-8 col-xs-12 q-my-xl"
       :class="{ 'q-pl-lg': $q.screen.lt.md }"
     >
       <div class="page-title">Nuestros blogs</div>
@@ -16,15 +16,22 @@
         >
           <q-item-section side>
             <q-img
+              v-if="$q.screen.lt.md"
               :src="`imgs/${blog.img}`"
-              style="height: 80px; width: 80px"
+              style="height: 80px; width: 100px"
+            /><q-img
+              v-else
+              :src="`imgs/${blog.img}`"
+              style="height: 140px; width: 220px"
             />
           </q-item-section>
           <q-item-section>
-            <q-item-label class="q-mb-md text-bold" style="font-size: 20px">{{
+            <q-item-label class="q-mb-md text-bold" style="font-size: 28px">{{
               blog.title
             }}</q-item-label>
-            <q-item-label caption>{{ blog.description }}...</q-item-label>
+            <q-item-label caption style="font-size: 20px"
+              >{{ blog.description }}...</q-item-label
+            >
           </q-item-section>
         </q-item>
         <q-separator inset />
@@ -32,7 +39,7 @@
       <!-- Añadir esto en un futuro -->
       <!-- https://quasar.dev/vue-components/pagination#introduction -->
     </div>
-    <div class="col-3" />
+    <div class="col-2" />
   </q-page>
 </template>
 
