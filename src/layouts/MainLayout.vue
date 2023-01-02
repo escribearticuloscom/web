@@ -92,6 +92,22 @@
           </ul>
         </div>
       </div>
+      <div class="text-center q-mt-xl">
+        <q-btn
+          class="text-white"
+          flat
+          label="Política de privacidad"
+          @click="() => goTo('privacy_policy')"
+        />
+        |
+        <q-btn
+          class="text-white"
+          flat
+          label="Términos y condiciones"
+          @click="() => goTo('terms_and_conditions')"
+        />
+      </div>
+
       <div class="copyright">
         Copyright &copy; 2023 escribearticulos.com. Todos los derechos
         reservados.

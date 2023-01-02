@@ -33,6 +33,21 @@ const routes = [
     component: () => import("layouts/MainLayout.vue"),
     children: [{ path: "", component: () => import("src/pages/Blogs.vue") }],
   },
+  {
+    path: "/privacy_policy",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("src/pages/PrivacyPolicy.vue") },
+    ],
+  },
+  {
+    path: "/terms_and_conditions",
+    component: () => import("layouts/MainLayout.vue"),
+    children: [
+      { path: "", component: () => import("src/pages/TermsAndConditions.vue") },
+    ],
+  },
+
   // Always leave this as last one,
   // but you can also remove it
   {
