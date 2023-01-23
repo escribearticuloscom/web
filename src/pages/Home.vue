@@ -6,28 +6,51 @@
         class="col-md-4 col-xs-12"
         :class="{ 'text-center': $q.screen.lt.md }"
       >
-        <div class="landing-tile">
+        <div
+          class="landing-tile"
+          :style="
+            $q.screen.gt.md
+              ? 'font-size:64px;'
+              : $q.screen.gt.sm
+              ? 'font-size:48px'
+              : 'font-size:32px'
+          "
+        >
           Mejora el SEO de tu sitio web con nuestros artículos de calidad
         </div>
         <div class="row">
-          <div class="col-md-8 col-xs-12 landing-subtitle">
+          <div
+            class="col-md-8 col-xs-12 landing-subtitle"
+            :style="
+              $q.screen.gt.md
+                ? 'font-size:28px;'
+                : $q.screen.gt.sm
+                ? 'font-size:20px'
+                : 'font-size:14px'
+            "
+          >
             Aumenta el tráfico y la visibilidad de tu sitio gracias a nuestros
             contenidos optimizados para los motores de búsqueda
           </div>
         </div>
-        <q-btn
-          color="primary"
-          class="q-mt-lg"
-          size="xl"
-          rounded
-          no-caps
-          @click="() => $router.push('/prices')"
-        >
-          <div style="letter-spacing: 2px">Ver tarifas</div>
-        </q-btn>
-        <div class="landing-benefits-tile">Características</div>
+        <div class="text-center col-12">
+          <q-btn
+            color="primary"
+            class="q-mt-lg"
+            size="30px"
+            rounded
+            no-caps
+            @click="() => $router.push('/prices')"
+          >
+            <div style="letter-spacing: 2px">Ver tarifas</div>
+          </q-btn>
+        </div>
       </div>
       <div v-if="$q.screen.gt.sm" class="col-7 landing-background"></div>
+      <div class="landing-benefits-tile text-center col-12">
+        Características
+      </div>
+
       <div class="col-12 row" :class="{ 'text-center': $q.screen.lt.md }">
         <div class="col-md-4 col-xs-12 benefit-card">
           <div :class="{ dot: $q.screen.gt.sm }" />
@@ -76,7 +99,7 @@ export default defineComponent({
 </script>
 <style>
 .landing-tile {
-  font-size: 42px;
+  font-size: 24px;
   font-weight: bold;
   margin-top: 5vh;
   letter-spacing: 2px;
@@ -92,14 +115,15 @@ export default defineComponent({
 }
 
 .landing-subtitle {
-  font-size: 18px;
+  font-size: 28px;
   margin-top: 16px;
 }
 
 .landing-background {
+  height: 1500px !important;
   text-align: right;
   background-position: right;
-  background-size: 550px;
+  background-size: 100%;
   background-repeat: no-repeat;
   background-image: url("../../public/imgs/fondo_home.png");
   margin-top: -20vh;

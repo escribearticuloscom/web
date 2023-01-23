@@ -59,6 +59,8 @@ export default defineComponent({
       .context("../assets/json", true, /^\.\/.*\.json$/)
       .keys()
       .map((x) => x.split("./")[1]);
+    pages.forEach((p) => console.log(p));
+    console.log(pages);
     for (let page of pages) {
       await import(`../assets/json/${page}`).then((blog) => {
         this.blogs.push({
