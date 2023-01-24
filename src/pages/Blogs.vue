@@ -9,6 +9,14 @@
       <div class="page-title">{{ title }}</div>
       <q-img :src="`imgs/${img}`" style="width: 100%" class="q-mb-xl" />
       <div v-html="html"></div>
+      <div class="text-center q-my-xl">
+        <q-btn
+          label="contactanos"
+          color="primary"
+          :size="$q.screen.gt.sm ? 'xl' : 'md'"
+          @click="() => $router.push('/contact')"
+        />
+      </div>
     </div>
     <div class="col-3" />
   </q-page>
