@@ -16,29 +16,36 @@
       rel="icon"
       type="image/png"
       sizes="128x128"
-      href="imgs/logo_corto.png"
+      href="imgs/logo_corto.svg"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="96x96"
-      href="imgs/logo_corto.png"
+      href="imgs/logo_corto.svg"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="imgs/logo_corto.png"
+      href="imgs/logo_corto.svg"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="imgs/logo_corto.png"
+      href="imgs/logo_corto.svg"
     />
-    <link rel="icon" type="image/ico" href="imgs/logo_corto.png" />
+    <link rel="icon" type="image/ico" href="imgs/logo_corto.svg" />
   </head>
   <body>
+    <script>
+      (function () {
+        let redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        console.log("redirect", sessionStorage);
+      })();
+    </script>
     <!-- DO NOT touch the following DIV -->
     <div id="q-app"></div>
   </body>

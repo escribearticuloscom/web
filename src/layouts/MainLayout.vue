@@ -2,7 +2,7 @@
   <q-layout view="lHh Lpr lFf">
     <q-header elevated class="bg-white q-pt-sm q-mb-md">
       <q-toolbar class="row justify-between">
-        <div class="col-xs-12 col-md-2">
+        <div class="col-xs-12 col-md-3">
           <div
             class="q-my-sm row items-center"
             :class="{ 'q-ml-lg': $q.screen.gt.sm }"
@@ -17,11 +17,21 @@
                 icon="menu"
               />
             </div>
-            <div class="col-11 text-center">
+            <div class="col-11 text-center items-center justify-center row">
               <q-img
-                src="imgs/logo_largo.png"
-                style="width: 200px; height: 50px"
+                src="imgs/logo_corto.svg"
+                style="width: 50px; height: 50px"
               />
+              <div
+                class="text-black"
+                style="
+                  font-size: 20px;
+                  font-weight: 500;
+                  font-family: 'Times New Roman', Times, serif;
+                "
+              >
+                escribearticulos.com
+              </div>
             </div>
           </div>
         </div>
@@ -41,7 +51,7 @@
     </q-header>
     <q-drawer v-model="leftMenuOpen" :width="200" bordered class="bg-grey-3">
       <div class="q-my-xl text-center">
-        <q-img src="imgs/logo_corto.png" style="width: 50px; height: 50px" />
+        <q-img src="imgs/logo_corto.svg" style="width: 50px; height: 50px" />
       </div>
       <q-list>
         <template v-for="btn in headerButtons" :key="btn.label">

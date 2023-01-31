@@ -124,7 +124,7 @@ module.exports = configure(function (ctx) {
       extendWebpack(cfg) {
         cfg.plugins.push(
           new SitemapPlugin({
-            base: "https://mejoratuseo.escribearticulos.com",
+            base: "https://escribearticulos.com",
             paths: paths,
             options: {
               filename: "sitemap.xml",
